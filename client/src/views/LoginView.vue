@@ -34,6 +34,7 @@ export default {
         localStorage.setItem('username', response.data.username);
         localStorage.setItem('password', this.password);
         localStorage.setItem('role', response.data.role.toLowerCase());
+        localStorage.setItem('loginTime', new Date().getTime())
         await router.push({name: 'home'});
         console.log(response.data);
       } catch (error) {
