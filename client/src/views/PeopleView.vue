@@ -16,7 +16,8 @@
 </template>
 
 <script>
-import axios from "axios";
+
+import {getAllPeople} from "@/service/PeopleService";
 
 export default {
   data () {
@@ -24,10 +25,10 @@ export default {
       people: []
     }
   },
-  created () {
-    axios.get('/people').then(response => {
-      this.people = response.data;
-    });
+   created() {
+     getAllPeople().then(res=>{
+       this.people = res
+     })
   }
 }
 </script>

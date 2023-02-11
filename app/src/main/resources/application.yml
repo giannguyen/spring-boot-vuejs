@@ -22,3 +22,6 @@ spring:
         naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
         jdbc.lob.non_contextual_creation: true
         format_sql: true
+
+server:
+  port: 4000
