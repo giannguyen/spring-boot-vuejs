@@ -2,11 +2,29 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/people">People</router-link> <template v-if="isAuthenticated"> |
+      <router-link to="/logout">Logout</router-link></template>
     </nav>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isAuthenticated: false,
+    };
+  },
+  updated() {
+    this.isAuthenticated = localStorage.getItem("username") != null;
+  },
+  beforeDestroy() {
+    localStorage.clear();
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
