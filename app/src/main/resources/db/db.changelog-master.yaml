@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: createTablePerson
+      author: gian.nguyen
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: changelog/01-create-person-schema.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
+  - changeSet:
+        id: createTableUser
+        author: gian.nguyen
+        changes:
+            - sqlFile:
+                  dbms: postgresql
+                  encoding: utf8
+                  endDelimiter: \n/\s*\n|\n/\s*$
+                  path: changelog/01-create-user-schema.sql
+                  relativeToChangelogFile: true
+                  splitStatements: true
+                  stripComments: true
+  - changeSet:
+      id: insert-data-person
+      author: gian.nguyen
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            endDelimiter: \n/\s*\n|\n/\s*$
+            path: changelog/02-insert-data-person.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true
