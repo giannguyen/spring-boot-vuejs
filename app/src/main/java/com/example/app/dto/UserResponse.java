@@ -1,6 +1,5 @@
 package com.example.app.dto;
 
-import com.example.app.model.User;
 import lombok.Getter;
 import lombok.Setter;
 

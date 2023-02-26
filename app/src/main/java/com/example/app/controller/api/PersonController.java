@@ -1,4 +1,4 @@
-package com.example.app.controller;
+package com.example.app.controller.api;
 
 import com.example.app.model.Person;
 import com.example.app.repository.PersonRepository;
@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/people")
+@RequestMapping("api/people")
 public class PersonController {
 
     @Autowired
     private PersonRepository repository;
 
-    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<Person> getAllPeople() {
         return repository.findAll();
     }
