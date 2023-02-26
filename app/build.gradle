@@ -26,6 +26,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.modelmapper:modelmapper:2.3.7'
 	implementation 'org.flywaydb:flyway-core:9.8.1'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
@@ -42,6 +46,4 @@ flyway {
 	target= '2'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
+
